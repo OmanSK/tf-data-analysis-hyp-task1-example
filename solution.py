@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from scipy.stats import ttest_ind
 
 
 chat_id = 143893840 # Ваш chat ID, не меняйте название переменной
@@ -31,7 +32,7 @@ def solution(x_success: int,
         t_test.append(test.pvalue >= p_value)
         errors.append(error)
         
-    result = np.mean(t_test)
+    result = np.sum(t_test) / iterations
     errors = np.mean(errors)
     
     return result < p_value
