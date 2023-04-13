@@ -27,8 +27,6 @@ def solution(x_success: int,
         second = np.random.binomial(1, prob_test, y_cnt)
 
         test = ttest_ind(first, second)
-        error = abs((np.mean(first) - np.mean(second))
-        
         t_test.append(test.pvalue >= p_value)
         errors.append(error)
         
