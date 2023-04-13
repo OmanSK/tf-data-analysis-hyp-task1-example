@@ -23,8 +23,8 @@ def solution(x_success: int,
     
     for i in range(iterations):
         
-        first = np.random.binomial(1, prob_control, x_cnt)
-        second = np.random.binomial(1, prob_test, y_cnt)
+        first = np.random.binomial(1, prob_control, int(x_cnt))
+        second = np.random.binomial(1, prob_test, int(y_cnt))
 
         test = ttest_ind(first, second)
         t_test.append(test.pvalue >= p_value)
